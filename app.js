@@ -61,7 +61,7 @@ app.use(promise());
 app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('port'), function(){
-	console.log('Server Started');
+	console.log('Server Started on ', app.get('port'));
 });
 
 app.set('views', __dirname + '/views');
