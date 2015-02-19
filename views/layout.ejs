@@ -1,0 +1,46 @@
+<!DOCTYPE html>  
+<html lang="en">  
+	<head>
+		<meta charset="utf-8">
+		<title>Cleveroad Test Task</title>
+
+		<link rel="stylesheet" href="/css/app.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+	</head>
+		<body>
+			<div class="wrap container">
+				<nav class="navbar navbar-default">
+					<ul class="nav navbar-nav col-sm-5 col-sm-offset-5">
+						<% if(userrole === 'Admin') {%> 
+							<li><a href="/users/list">Users</a></li>
+						<%} %>
+						<li><a href="/projects/list">Projects</a></li>
+						<li><a href="/milestones/list">Milestones</a></li>
+						<li><a href="/notes/list">Notes</a></li>
+						<% if(isLogged) {%>
+							<li>
+								<a href="/logout" class="">
+									<p class="">Logout</p>
+								</a>
+							</li>
+						<%} else {%>
+							<li>
+								<a href="/login" class="">
+									<p class="text-danger">Log in</p>
+								</a>
+							</li>
+							<li>
+								<a href="/signup" class="">
+									<p class="text-success">Sign up</p>
+								</a>
+							</li>
+						<%} %>
+					</ul>
+				</nav>
+				<div class="jumbotron">
+					<h1 class="page-header"> <%= title %></h1>
+					<%- body %>
+				</div>
+			</div>
+		</body>
+</html>  

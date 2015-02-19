@@ -1,0 +1,40 @@
+<form action="/api/newnote" method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'note',
+		labelContent: 'Note',
+		placeholder:  'note',
+		value: note.note
+	}) %>
+	<%- include('form/field', {
+		inputName: 'complete',
+		labelContent: 'Complete',
+		placeholder:  'complete',
+		value: note.complete
+	}) %>
+	<%- include('form/field', {
+		inputName: 'number',
+		labelContent: 'Number',
+		inputType: 'number',
+		placeholder:  'number',
+		value: note.number
+	}) %>
+	
+	<%- include('form/select', {
+		selectName: 'userId',
+		labelText: 'Users:',
+		entity: users,
+		entityProp: 'username'
+	}) %>
+	<%- include('form/select', {
+		selectName: 'milestoneId',
+		labelText: 'Milestone:',
+		entity: milestones,
+		entityProp: 'name'
+	}) %>	
+
+	<%- include('form/btn-submit&ref', {
+		btnText: 'Save',
+		refText: 'Cancel',
+		refPath: '/notes/list'
+	})%>
+</form>

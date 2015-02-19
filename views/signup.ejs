@@ -1,0 +1,46 @@
+<form action="/adduser" method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'firstName',
+		labelContent: 'First name',
+		placeholder:  'firstName',
+		// value: user.firstName
+	}) %>
+	<%- include('form/field', {
+		inputName: 'lastName',
+		labelContent: 'Last name',
+		placeholder:  'lastName',
+		// value: user.lastName
+	}) %>
+	<%- include('form/field', {
+		inputName: 'email',
+		labelContent: 'Email',
+		placeholder:  'email',
+		// value: user.email,
+		attributes: 'required'
+	}) %>
+	<%- include('form/field', {
+		inputName: 'username',
+		labelContent: 'Username',
+		placeholder:  'username',
+		attributes: 'required'
+	}) %>
+	<%- include('form/field', {
+		inputName: 'password',
+		labelContent: 'Password',
+		placeholder:  'password',
+		attributes: 'required'
+	}) %>
+
+	<%- include('form/select', {
+		selectName: 'city',
+		labelText: 'City:',
+		entity: cities,
+		entityProp: 'name',
+	}) %>
+	
+	<%- include('form/btn-submit&ref', {
+		btnText: 'Sign up',
+		refText: 'Cancel',
+		refPath: '/login'
+	})%>
+</form>

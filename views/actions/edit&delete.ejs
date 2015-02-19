@@ -1,0 +1,17 @@
+<% if (~actionsPermissions.indexOf(userrole)) {%>
+	<td>
+		<a href=<%= linkSearch %> class="btn btn-default">
+			<span class="glyphicon glyphicon-search" >
+			</span>						
+		</a>
+	</td>
+	<td>
+		<form action=<%= formAction %> id=<%= formId %> method="post" role="form" 		enctype="application/x-www-form-urlencoded">
+			<input type="hidden" value="DELETE" name="_method" />
+		</form>
+		<button type="submit" form=<%= formId %> value="Submit">
+			<span class="glyphicon glyphicon-remove" >
+			</span>	
+		</button>	
+	</td>
+<%} %>

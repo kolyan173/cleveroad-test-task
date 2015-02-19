@@ -1,0 +1,16 @@
+<% include alert  %>
+<form action="/restore_pass" method="post" class="form-horizontal" role="form">
+	<%- include('form/field', {
+		inputName: 'email',
+		labelContent: 'Email',
+		placeholder: 'email',
+		inputType: 'email',
+		attributes: 'required'
+	}) %>
+
+	<%- include('form/btn-submit&ref', {
+		btnText: 'Restore password',
+		refText: 'Cancel',
+		refPath: '/login'
+	})%>
+</form>

@@ -1,0 +1,23 @@
+<% include alert  %>
+<form action=<%= "/restorepass/" + user.resetPasswordToken %> method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'password',
+		labelContent: 'Enter new password',
+		placeholder: 'Full password',
+		inputType: 'password',
+		attributes: 'required'
+	}) %>
+	<%- include('form/field', {
+		inputName: 'confirm',
+		labelContent: 'Confirm password',
+		placeholder: 'confirm password',
+		inputType: 'password',
+		attributes: 'required'
+	}) %>
+
+	<%- include('form/btn-submit&ref', {
+		btnText: 'Save',
+		refText: 'Cancel',
+		refPath: '/login'
+	})%>
+</form>

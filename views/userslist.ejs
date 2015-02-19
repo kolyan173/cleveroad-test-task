@@ -1,0 +1,9 @@
+<%- include('table/_table', {
+	headColumns: users[0],
+	entity: users,
+	linkSearch: '/users/usercard/',
+	formAction: "/api/removeuser/",
+	formId: "removeuser-",
+	btnAddPath: false,
+	actionsPermissions: 'Admin'
+})%>

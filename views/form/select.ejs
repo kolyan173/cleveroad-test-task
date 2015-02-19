@@ -1,0 +1,12 @@
+<div class="form-group">
+	<label for=<%= selectName %> class="col-sm-2 control-label"><%= labelText %></label>
+	<div class="col-sm-5">
+		<select name=<%= selectName %> <%= disabled && "disabled" %> class="form-control">
+			<% for(var i=0; i<entity.length; i++) {%>
+				<option value= <%= entity[i].id %> >
+					<%= entity[i][entityProp] %>
+				</option>
+			<%} %>
+		</select>
+	</div>
+</div>

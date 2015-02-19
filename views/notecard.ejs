@@ -1,0 +1,58 @@
+<form action=<%= "/notes/" + note.id + postfix %> method= "post" role="form" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+ 	<% if(edit) {%>
+ 	<% console.log('edit', edit)  %>
+ 		<input type="hidden" value="put" name="_method" />
+	<%} %>
+	
+	<%- include('form/field', {
+		inputName: 'note',
+		labelContent: 'Note',
+		disabled: !edit,
+		placeholder:  'note',
+		value: note.note
+	}) %>
+	
+	<% if(!edit) {%>
+		<%- include('form/field', {
+			inputName: 'user',
+			labelContent: 'User',
+			disabled: !edit,
+			placeholder:  '',
+			value: note.user.username
+		}) %>
+		<%- include('form/field', {
+			inputName: 'milestone',
+			labelContent: 'Milestone',
+			disabled: !edit,
+			placeholder:  '',
+			value: note.milestone.name
+		}) %>
+
+		<%- include('form/btn-save&&cancel', {
+			editRef: '/notes/' + note.id + '/edit',
+			cancelRef: '/notes/list/'
+		}) %>
+
+	<%} else {%>
+		<%- include('form/select', {
+			selectName: 'userId',
+			labelText: 'User:',
+			entity: users,
+			entityProp: 'username',
+			disabled: !edit
+		}) %>	
+		<%- include('form/select', {
+			selectName: 'milestoneId',
+			labelText: 'Milestone:',
+			entity: milestones,
+			entityProp: 'name',
+			disabled: !edit
+		}) %>	
+
+		<%- include('form/btn-submit&ref', {
+			btnText: 'Save',
+			refText: 'Cancel',
+			refPath: "/notes/" + note.id
+		})%>
+	<%}  %>
+</form>

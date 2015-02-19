@@ -1,0 +1,9 @@
+<%- include('table/_table', {
+	headColumns: projects[0],
+	entity: projects,
+	linkSearch: '/projects/projectcard/',
+	formAction: '/api/removeproject/',
+	formId: 'removeproject-',
+	btnAddPath: '/projects/newproject',
+	actionsPermissions: 'Client Manager'
+})%>

@@ -1,0 +1,33 @@
+<form action=<%= "/projects/projectcard/" + project.id + postfix %> method= "post" role="form" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+ 	<% if(edit) {%>
+ 		<input type="hidden" value="put" name="_method" />
+	<%} %>
+	
+	<%- include('form/field', {
+		inputName: 'name',
+		labelContent: 'Name',
+		disabled: !edit,
+		placeholder: project.name,
+		value: project.name
+	}) %>
+	<%- include('form/field', {
+		inputName: 'description',
+		labelContent: 'Description',
+		disabled: !edit,
+		placeholder: project.description,
+		value: project.description
+	}) %>
+
+	<% if(!edit) {%>
+		<%- include('form/btn-save&&cancel', {
+			editRef: '/projects/projectcard/' + project.id + '/edit',
+			cancelRef: '/projects/list/'
+		}) %>
+	<%} else {%>
+		<%- include('form/btn-submit&ref', {
+			btnText: 'Save',
+			refText: 'Cancel',
+			refPath: '/projects/projectcard/' + project.id
+		})%>
+	<%}  %>
+</form>

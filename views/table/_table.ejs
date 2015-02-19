@@ -1,0 +1,23 @@
+<table class="table table-hover">
+	<%- include('../form/thead', {
+		headColumns: headColumns
+	})  %>
+	<tbody class="bs-glyphicons">
+		<% for (var i=0; i < entity.length; i++) {%>
+			<tr>
+				<%- include('./row', {
+					row: entity[i]
+				}) %>			
+				<%- include('../actions/edit&delete', {
+					linkSearch: linkSearch + entity[i]['id'],
+					formAction: formAction + entity[i]['id'],
+					formId: formId + entity[i]['id'],
+					actionsPermissions: actionsPermissions
+				}) %>
+			</tr>
+		<%} %>
+	</tbody>
+</table>
+<% if(btnAddPath && ~actionsPermissions.indexOf(userrole)) {%>
+	<%- include('../form/btn-add', {path: btnAddPath}) %>
+<%} %>

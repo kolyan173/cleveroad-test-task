@@ -1,0 +1,19 @@
+<form action="/api/newproject" method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'name',
+		labelContent: 'Project\'s name',
+		placeholder:  'name',
+		value: project.name
+	}) %>
+	<%- include('form/field', {
+		inputName: 'description',
+		labelContent: 'Description',
+		placeholder:  'description',
+		value: project.description
+	}) %>
+
+	<%- include('form/btn-submit&ref', {
+		refPath: '/projects/list',
+		refText: 'Back'
+	}) %>
+</form>

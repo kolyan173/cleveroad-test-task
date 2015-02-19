@@ -1,0 +1,37 @@
+<form action="/api/edittoggle" method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'firstName',
+		labelContent: 'First name',
+		disabled: !edit,
+		value: user.firstName
+	}) %>
+	<%- include('form/field', {
+		inputName: 'lastName',
+		labelContent: 'Last name',
+		disabled: !edit,
+		value: user.lastName
+	}) %>
+	<%- include('form/field', {
+		inputName: 'email',
+		labelContent: 'Email',
+		disabled: !edit,
+		value: user.email
+	}) %>
+	<%- include('form/field', {
+		inputName: 'username',
+		labelContent: 'Username',
+		disabled: !edit,
+		value: user.username
+	}) %>
+	<%- include('form/field', {
+		inputName: 'city',
+		labelContent: 'City',
+		disabled: !edit,
+		value: user.city
+	}) %>
+
+	<%- include('form/btn-save&&cancel', {
+		editRef: '/notes/list/',
+		cancelRef: '/notes/list/'
+	}) %>
+</form>

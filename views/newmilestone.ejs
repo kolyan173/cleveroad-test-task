@@ -1,0 +1,30 @@
+<form action="/api/newmilestone" method="post" role="form" class="form-horizontal">
+	<%- include('form/field', {
+		inputName: 'name',
+		labelContent: 'Name',
+		placeholder:  'name',
+		value: milestone.name
+	}) %>
+	<%- include('form/field', {
+		inputName: 'number',
+		labelContent: 'Number',
+		placeholder:  'number',
+		value: milestone.number
+	}) %>
+	<%- include('form/field', {
+		inputName: 'complete',
+		labelContent: 'Complete',
+		placeholder:  'complete',
+		value: milestone.complete
+	}) %>
+	<%- include('form/select', {
+		selectName: 'projectId',
+		labelText: 'Projects:',
+		entity: projects,
+		entityProp: 'name'
+	}) %>
+	<%- include('form/btn-submit&ref', {
+		refPath: '/milestones/list',
+		refText: 'Back'
+	}) %>
+</form>

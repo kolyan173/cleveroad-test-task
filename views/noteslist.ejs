@@ -1,0 +1,9 @@
+<%- include('table/_table', {
+	headColumns: notes[0],
+	entity: notes,
+	linkSearch: '/notes/',
+	formAction: "/api/removenote/",
+	formId: "removenote-",
+	btnAddPath: "/notes/newnote",
+	actionsPermissions: 'Client Manager'
+})%>

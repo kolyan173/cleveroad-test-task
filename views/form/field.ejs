@@ -1,0 +1,22 @@
+<div class="form-group">
+	<label for= <%= inputName %> class="col-sm-2 control-label"><%=labelContent %></label>
+	<div class="col-sm-4">
+		<% if(disabled) {%>
+			<p id=<%= inputName %> 
+				class="form-control" 
+			> 
+				<%= value %> 
+			</p>
+		<%} else {%>
+			<input type=<%= inputType %> 
+				name= <%= inputName %> 
+				placeholder= <%= placeholder %> 
+				id= <%= inputName %> 
+				class="form-control" 
+				<%= attributes %> 
+				<%= disabled && "disabled"%> 
+				value=<%= value %> 
+			>
+		<%}  %>
+	</div>
+</div>

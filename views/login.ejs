@@ -1,0 +1,25 @@
+<% include alert %>
+<form action="/auth" method="post" class="form-horizontal" role="form">
+	<%- include('form/field', {
+		labelContent: 'Username',
+		inputName: 'username',
+		inputType: 'text',
+		placeholder: 'Username',
+		attributes: 'required'
+	})%>
+	<%- include('form/field', {
+		labelContent: 'Password',
+		inputName: 'password',
+		inputType: 'password',
+		placeholder: 'Password',
+		attributes: 'required'
+	})%>
+	<%- include('form/btn-submit&ref', {
+		btnText: 'Login',
+		refText: 'Signup',
+		refPath: '/signup'
+	})%>
+</form>
+<div class="col-sm-offset-2">
+	<a href="/restore_pass" class="">Forgot password?</a>	
+</div>

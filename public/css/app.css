@@ -1,0 +1,17 @@
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+.wrap {
+    padding: 10px;
+}
+
+table tbody tr:hover {
+    cursor: pointer;
+} 

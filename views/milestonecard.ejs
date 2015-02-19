@@ -1,0 +1,43 @@
+<form action=<%= "/milestones/" + milestone.id + postfix %> method= "post" role="form" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+ 	<% if(edit) {%>
+ 		<input type="hidden" value="put" name="_method" />
+	<%} %>
+	<%- include('form/field', {
+		inputName: 'name',
+		labelContent: 'Name',
+		disabled: !edit,
+		placeholder:  'name',
+		value: milestone.name
+	}) %>
+	<%- include('form/field', {
+		inputName: 'complete',
+		labelContent: 'Complete',
+		disabled: !edit,
+		placeholder:  'complete',
+		value: milestone.complete
+	}) %>
+	<%- include('form/field', {
+		inputName: 'number',
+		labelContent: 'Number',
+		disabled: !edit,
+		placeholder:  'number',
+		value: milestone.number
+	}) %>
+	
+	<% if(!edit) {%>
+		
+		<%- include('form/btn-save&&cancel', {
+			editRef: '/milestones/' + milestone.id + '/edit',
+			cancelRef: '/milestones/list/'
+		}) %>
+		
+	<%} else {%>
+		
+		<%- include('form/btn-submit&ref', {
+			btnText: 'Save',
+			refText: 'Cancel',
+			refPath: "/milestones/" + milestone.id
+		})%>
+
+	<%}  %>
+</form>

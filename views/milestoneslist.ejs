@@ -1,0 +1,9 @@
+<%- include('table/_table', {
+	headColumns: milestones[0],
+	entity: milestones,
+	linkSearch: '/milestones/',
+	formAction: "/api/removemilestone/",
+	formId: "removemilestone-",
+	btnAddPath: "/milestones/newmilestone",
+	actionsPermissions: 'Client Manager'
+})%>
